@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    </head>
+    <!-- <body style="background-image: url('/images/two.jpg'); height: 400px;"> -->
+    <body style="background-color: rgb(41, 50, 177); ">
+        <div class="container">
+            <div class="jumbotron" style="width:80%; transform: translate(100px,50px);">
+                <% if(locals.message){ %>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert" style="text-align: center;">
+                        <%= message.success %>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                    </div>
+                <% } %>
+                    <h4 class="display-6" style="text-align:center;">Register</h4>
+                    
+                    <form action="/register" enctype="multipart/form-data" method="POST">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label>Name: </label>
+                                    <input type="text" id="username" name="username" class="form-control" placeholder="Enter name" required/>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Email: </label>
+                                    <input type="text" id="email" name="email" class="form-control" placeholder="Enter email" required/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label>Phone Number: </label>
+                                    <input type="text" id="mobile1" name="mobile1" class="form-control" placeholder="Enter phone number" required/>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Upload school ID photo: </label>
+                                    <input type="file" name="myImage" accept="image/*"  class="form-control-file" id="exampleFormControlFile1" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <label>Parent's/Guardian's Name: </label>
+                                    <input type="text" id="guardian" name="guardian" class="form-control" placeholder="Enter parent/guardian name" required/>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Phone Number: </label>
+                                    <input type="text" id="mobile2" name="mobile2" class="form-control" placeholder="Enter phone number" required/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-6" style="color: green;">
+                                    <label><h3>Paybill No: 59854 </h3></label>
+                                </div>
+                                <div class="col-lg-6" style="color: green;">
+                                    <label>Enter M-Pesa Code </label>
+                                    <input type="text" id="code" name="code" class="form-control" placeholder="Enter code" required/>
+                                </div>
+                            </div>
+                        </div>
+
+                    <button class="btn btn-primary" type="submit" style="text-align:center;">Register</button>
+                    </form>
+            </div>
+        </div>
+    </body>
+</html>
